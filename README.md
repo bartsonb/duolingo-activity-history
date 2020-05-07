@@ -9,30 +9,24 @@ with a crontab because the api only returns data for the last 8 days. Sadly the 
 for the language that you last completed a lesson for, which makes it hard to track your activies if you are 
 learning multiple languages.
 
-# Setup
+## Setup
 
 Please make sure to copy the `.env.example` file as `.env` and fill out every given parameter, otherwise the application
-won't run.
+won't run. Further explanation is given in the `.env.example`.
 
-Further explanation is given in the `.env.example`.
+## Run this application
 
-# Run this application
-
-## To scrap the API, save the data to files and create parsed json files simply run the following commands:
+### To scrap the API, save the data to files and create parsed json files simply run the following commands:
 ```
-npm 
-```
-and
-```
-npm run build
+npm i && npm run build 
 ```
 
-## To only scrap the API, simply run:
+### To only scrap the API, simply run:
 ```
 node scrap
 ```
 
-## To only parse the data, simply run:
+### To only parse the data, simply run:
 ```
 node parse
 ```
