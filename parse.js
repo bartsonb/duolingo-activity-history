@@ -61,8 +61,6 @@ fs.readdir(dirRaw, (err, userFolders) => {
                 dataByLanguage[language] = dataByDate;
             });
 
-            console.log(dataByLanguage);
-
             // Write parsed data to file
             fs.writeFile(`${dirParsed}/${user}.json`, JSON.stringify(dataByLanguage, null, 2), () => {
                 if (err) return console.log(err);
