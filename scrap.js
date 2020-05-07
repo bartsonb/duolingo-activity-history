@@ -36,7 +36,7 @@ usernames.map(user => {
                         // create language folder if they don't exist
                         accessOrCreate(languageDir, () => { 
                             // write data to file
-                            fs.writeFile(`${languageDir}/${date}-${user}-${lang}.json`, JSON.stringify(data, null, 2), (err) => {
+                            fs.writeFile(`${languageDir}/${date}-${user}-${lang}.json`, JSON.stringify(data), (err) => {
                                 if (err) return console.log(err);
             
                                 console.log(`Saved API Data to file: '${languageDir}/${date}-${user}-${lang}.json'`);
