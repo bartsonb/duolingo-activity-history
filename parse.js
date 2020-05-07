@@ -4,8 +4,11 @@ const fs = require('fs');
 
 const dirRaw = process.env.DATA_DIR_RAW;
 const dirParsed = process.env.DATA_DIR_PARSED;
-const usernames = process.env.USERNAMES.split(';').filter(el => el);
 const dateFormat = 'DD-MM-YYYY';
+
+const usernames = (process.env.USERNAMES.includes(';'))
+    ? process.env.USERNAMES.split(';').filter(el => el)
+    : process.env.USERNAMES;
 
 const accessOrCreate = (dir, callback) => {
     fs.access(dir, err => {

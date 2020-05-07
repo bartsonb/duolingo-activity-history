@@ -8,21 +8,18 @@ const date = moment().toISOString(true);
 const url = 'https://www.duolingo.com/users';
 const usernames = process.env.USERNAMES.split(';').filter(el => el);
 
-const requestOptions = {
-    headers: {
-        Cookie: process.env.API_TOKEN
-    },
-    withCredentials: true
-};
-
 const accessOrCreate = (dir, callback) => {
     fs.access(dir, err => {
-        if (err) fs.mkdir(dir, { recursive: true }, callback);
+        if (err) fs.mkdir(dir, { recursive: true });
+        callback();
     });
 }
 
 usernames.map(user => {
-    axios.get(`${url}/${user}`, requestOptions)
+    axios.get(`${url}/${user}`, {
+        headers: { Cookie: process.env.API_TOKEN },
+        withCredentials: true
+    })
         .then(res => res.data)
         .then(res => {
             if ('language_data' in res) {
