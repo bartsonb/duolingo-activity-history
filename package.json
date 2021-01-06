@@ -9,7 +9,7 @@
   "author": "Armin Bartnik <armin.bartnik@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "moment": "^2.25.3"
   }
